@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EtermaxExam/RestClient/RestClient.m"
-            timestampString = "507164839.263067"
+            timestampString = "507165452.971108"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "-getWithURL:"
             landmarkType = "5">
          </BreakpointContent>
