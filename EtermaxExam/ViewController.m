@@ -22,7 +22,11 @@
 
 	SimpleRestClient *restClient = [SimpleRestClient new];
 
-	[restClient getWithURL:@"https://api.reddit.com/top?limit=2"];
+	[restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
+// NSLog(responseObject);
+	} andFailBlock: ^(NSError *error) {
+// NSLog(error);
+	}];
 }
 
 - (void)didReceiveMemoryWarning

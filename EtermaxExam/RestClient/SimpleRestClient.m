@@ -8,25 +8,35 @@
 
 #import "SimpleRestClient.h"
 
+@interface SimpleRestClient ()
+
+@end
+
 @implementation SimpleRestClient
 
-- (void)getWithURL:(NSString *)urlString
+- (void)getDataWithURL:(NSString *)urlString withSuccessBlock:(SuccessBlock)successBlock andFailBlock:(FailBlock)failBlock
 {
 	NSURL *url = [NSURL URLWithString:urlString];
 
 	NSURLSession *URLSession = [NSURLSession sharedSession];
 	NSURLSessionDataTask *downloadTask = [URLSession
 		                                  dataTaskWithURL:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
-		// 4: Handle response here
-		NSError *parseError;
-		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
-			                                                 options:kNilOptions
-			                                                   error:&parseError];
+		if (error && failBlock) {
+		    failBlock(error);
+		}
 
-		NSLog(@"");
+		if (response) {
+		    NSError *parseError;
+		    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+				                                                 options:kNilOptions
+				                                                   error:&parseError];
+            
+		    if (successBlock) {
+		        successBlock(json);
+			}
+		}
 	}];
 
-	// 3
 	[downloadTask resume];
 }
 

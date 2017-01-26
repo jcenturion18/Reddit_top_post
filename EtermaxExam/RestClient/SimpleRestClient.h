@@ -10,6 +10,9 @@
 
 @interface SimpleRestClient : NSObject
 
-- (void)getWithURL:(NSString *)urlString;
+	typedef void (^SuccessBlock)(id responseObject);
+typedef void (^FailBlock)(NSError *error);
+
+- (void)getDataWithURL:(NSString *)urlString withSuccessBlock:(SuccessBlock)sBlock andFailBlock:(FailBlock)fBlock;
 
 @end
