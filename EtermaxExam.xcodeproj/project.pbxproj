@@ -13,7 +13,7 @@
 		6DE9265A1E3AAFB100E4DF44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE926591E3AAFB100E4DF44 /* Assets.xcassets */; };
 		6DE9266B1E3AB14200E4DF44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE926691E3AB14200E4DF44 /* ViewController.m */; };
 		6DE9266C1E3AB14200E4DF44 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE9266A1E3AB14200E4DF44 /* ViewController.xib */; };
-		6DE926701E3AB3F800E4DF44 /* RestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9266F1E3AB3F800E4DF44 /* RestClient.m */; };
+		6DE926701E3AB3F800E4DF44 /* SimpleRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9266F1E3AB3F800E4DF44 /* SimpleRestClient.m */; };
 		6DE926721E3AB52900E4DF44 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 6DE926711E3AB52900E4DF44 /* uncrustify.cfg */; };
 /* End PBXBuildFile section */
 
@@ -28,8 +28,8 @@
 		6DE926681E3AB14200E4DF44 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6DE926691E3AB14200E4DF44 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6DE9266A1E3AB14200E4DF44 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		6DE9266E1E3AB3F800E4DF44 /* RestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestClient.h; sourceTree = "<group>"; };
-		6DE9266F1E3AB3F800E4DF44 /* RestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestClient.m; sourceTree = "<group>"; };
+		6DE9266E1E3AB3F800E4DF44 /* SimpleRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleRestClient.h; sourceTree = "<group>"; };
+		6DE9266F1E3AB3F800E4DF44 /* SimpleRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleRestClient.m; sourceTree = "<group>"; };
 		6DE926711E3AB52900E4DF44 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +89,8 @@
 		6DE9266D1E3AB3DA00E4DF44 /* RestClient */ = {
 			isa = PBXGroup;
 			children = (
-				6DE9266E1E3AB3F800E4DF44 /* RestClient.h */,
-				6DE9266F1E3AB3F800E4DF44 /* RestClient.m */,
+				6DE9266E1E3AB3F800E4DF44 /* SimpleRestClient.h */,
+				6DE9266F1E3AB3F800E4DF44 /* SimpleRestClient.m */,
 			);
 			path = RestClient;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DE926701E3AB3F800E4DF44 /* RestClient.m in Sources */,
+				6DE926701E3AB3F800E4DF44 /* SimpleRestClient.m in Sources */,
 				6DE9266B1E3AB14200E4DF44 /* ViewController.m in Sources */,
 				6DE926521E3AAFB000E4DF44 /* AppDelegate.m in Sources */,
 				6DE9264F1E3AAFB000E4DF44 /* main.m in Sources */,

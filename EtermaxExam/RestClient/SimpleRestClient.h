@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RestClient : NSObject
+@interface SimpleRestClient : NSObject
 
 - (void)getWithURL:(NSString *)urlString;
 

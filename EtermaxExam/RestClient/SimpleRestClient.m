@@ -6,9 +6,9 @@
 // Copyright © 2017 Julian Centurion. All rights reserved.
 //
 
-#import "RestClient.h"
+#import "SimpleRestClient.h"
 
-@implementation RestClient
+@implementation SimpleRestClient
 
 - (void)getWithURL:(NSString *)urlString
 {
@@ -18,6 +18,12 @@
 	NSURLSessionDataTask *downloadTask = [URLSession
 		                                  dataTaskWithURL:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
 		// 4: Handle response here
+		NSError *parseError;
+		NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+			                                                 options:kNilOptions
+			                                                   error:&parseError];
+
+		NSLog(@"");
 	}];
 
 	// 3

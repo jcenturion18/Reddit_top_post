@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "RestClient.h"
+#import "SimpleRestClient.h"
 
 @interface ViewController ()
 
@@ -20,9 +20,9 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view from its nib.
 
-	RestClient *restClient = [RestClient new];
+	SimpleRestClient *restClient = [SimpleRestClient new];
 
-https:    // api.reddit.com/top?limit=2
+	[restClient getWithURL:@"https://api.reddit.com/top?limit=2"];
 }
 
 - (void)didReceiveMemoryWarning
