@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D3B0E391E3AC700001AF4D3 /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E381E3AC700001AF4D3 /* NSDictionary+Null.m */; };
+		6D3B0E3C1E3AC8A6001AF4D3 /* RedditPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */; };
 		6DE9264F1E3AAFB000E4DF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9264E1E3AAFB000E4DF44 /* main.m */; };
 		6DE926521E3AAFB000E4DF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE926511E3AAFB000E4DF44 /* AppDelegate.m */; };
 		6DE926581E3AAFB100E4DF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE926561E3AAFB100E4DF44 /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		6D3B0E371E3AC700001AF4D3 /* NSDictionary+Null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Null.h"; sourceTree = "<group>"; };
 		6D3B0E381E3AC700001AF4D3 /* NSDictionary+Null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Null.m"; sourceTree = "<group>"; };
+		6D3B0E3A1E3AC8A6001AF4D3 /* RedditPostModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPostModel.h; sourceTree = "<group>"; };
+		6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPostModel.m; sourceTree = "<group>"; };
 		6DE9264A1E3AAFB000E4DF44 /* EtermaxExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtermaxExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE9264E1E3AAFB000E4DF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DE926501E3AAFB000E4DF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				6DE926591E3AAFB100E4DF44 /* Assets.xcassets */,
 				6DE9265E1E3AAFB100E4DF44 /* Info.plist */,
 				6DE9264D1E3AAFB000E4DF44 /* Supporting Files */,
+				6D3B0E3A1E3AC8A6001AF4D3 /* RedditPostModel.h */,
+				6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */,
 			);
 			path = EtermaxExam;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				6D3B0E391E3AC700001AF4D3 /* NSDictionary+Null.m in Sources */,
 				6DE926521E3AAFB000E4DF44 /* AppDelegate.m in Sources */,
 				6DE9264F1E3AAFB000E4DF44 /* main.m in Sources */,
+				6D3B0E3C1E3AC8A6001AF4D3 /* RedditPostModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
