@@ -14,5 +14,5 @@
 typedef void (^FailBlock)(NSError *error);
 
 - (void)getDataWithURL:(NSString *)urlString withSuccessBlock:(SuccessBlock)sBlock andFailBlock:(FailBlock)fBlock;
-
+- (void)downloadPictureFromURL:(NSString *)urlString withSuccessBlock:(SuccessBlock)successBlock andFailBlock:(FailBlock)failBlock;
 @end
