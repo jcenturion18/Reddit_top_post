@@ -8,9 +8,11 @@
 
 #import "ViewController.h"
 #import "SimpleRestClient.h"
+#import "RedditPostModelHandler.h"
 
 @interface ViewController ()
 @property (nonatomic, strong) SimpleRestClient *restClient;
+@property (nonatomic, strong) NSArray *postModelArray;
 @end
 
 @implementation ViewController
@@ -31,6 +33,8 @@
 
 	[self.restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
 	    // NSLog(responseObject);
+	    RedditPostModelHandler *handler = [RedditPostModelHandler new];
+	    weakSelf.postModelArray = [handler createArrayWithDictionary:responseObject];
 	} andFailBlock: ^(NSError *error) {
 	    [weakSelf showAlertWithTitle:@"Hubo un error" andMessage:@"Hubo un error al obtener los datos"];
 	}];
