@@ -10,13 +10,20 @@
 
 #import "NSDictionary+Null.h"
 
-#import "RedditPostModelHandler.h"
 #import "RedditPostModel.h"
+#import "RedditPostModelHandler.h"
+#import "RestClient/SimpleRestClient.h"
+
+@interface RedditPostModelHandler ()
+@property (nonatomic, strong) SimpleRestClient *restClient;
+@end
 
 @implementation RedditPostModelHandler
 - (NSArray *)createArrayWithDictionary:(NSDictionary *)dictionary
 {
 	NSMutableArray *array = [NSMutableArray new];
+
+	self.restClient = [SimpleRestClient new];
 
 	NSDictionary *children = [[dictionary ns_objectForKey:@"data"] ns_objectForKey:@"children"];
 
@@ -40,7 +47,14 @@
 	model.thumbnailURL = [dictionary ns_objectForKey:@"thumbnail"];
 	model.subreddit = [dictionary ns_objectForKey:@"subreddit"];
 	model.comentsQuantity = [dictionary ns_objectForKey:@"num_comments"];
-// @property (nonatomic, strong) UIImage *thumbnail;
+
+	__weak RedditPostModel *weakModel = model;
+
+	[self.restClient downloadPictureFromURL:model.thumbnailURL withSuccessBlock: ^(id responseObject) {
+	    weakModel.thumbnail = responseObject;
+	} andFailBlock: ^(NSError *error) {
+	    NSLog(@"");
+	}];
 
 	return model;
 }
