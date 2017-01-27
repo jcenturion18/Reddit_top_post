@@ -10,7 +10,7 @@
 #import "SimpleRestClient.h"
 
 @interface ViewController ()
-
+@property (nonatomic, strong) SimpleRestClient *restClient;
 @end
 
 @implementation ViewController
@@ -20,29 +20,38 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view from its nib.
 
-	SimpleRestClient *restClient = [SimpleRestClient new];
+	self.restClient = [SimpleRestClient new];
 
-	[restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
-// NSLog(responseObject);
+	[self callInitialRequest];
+}
+
+- (void)callInitialRequest
+{
+	__weak ViewController *weakSelf = self;
+
+	[self.restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
+	    // NSLog(responseObject);
 	} andFailBlock: ^(NSError *error) {
-// NSLog(error);
+	    [weakSelf showAlertWithTitle:@"Hubo un error" andMessage:@"Hubo un error al obtener los datos"];
 	}];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message
 {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
+		                                                           message:message
+		                                                    preferredStyle:UIAlertControllerStyleAlert];
+
+	__weak ViewController *weakSelf = self;
+
+	UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Reintentar" style:UIAlertActionStyleDefault
+		                                                  handler: ^(UIAlertAction *action) {
+		[weakSelf callInitialRequest];
+	}];
+
+	[alert addAction:defaultAction];
+
+	[self presentViewController:alert animated:YES completion:nil];
 }
-
-/*
- #pragma mark - Navigation
-
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-   }
- */
 
 @end
