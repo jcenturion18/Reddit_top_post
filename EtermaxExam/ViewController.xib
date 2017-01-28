@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
+                <outlet property="tableView" destination="fm8-ky-QWJ" id="j5Q-0r-xFn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fm8-ky-QWJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="yNL-Yy-4iw"/>
+                        <outlet property="delegate" destination="-1" id="1Sf-E2-Kt8"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="fm8-ky-QWJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BHe-3e-Ilw"/>
+                <constraint firstAttribute="trailing" secondItem="fm8-ky-QWJ" secondAttribute="trailing" id="Qmi-jP-UzD"/>
+                <constraint firstItem="fm8-ky-QWJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RFI-LH-G9L"/>
+                <constraint firstAttribute="bottom" secondItem="fm8-ky-QWJ" secondAttribute="bottom" id="gxf-0D-jZI"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <point key="canvasLocation" x="23.5" y="27.5"/>
         </view>
