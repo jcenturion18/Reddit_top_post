@@ -16,8 +16,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbV-xv-3um" userLabel="Header">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="106"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top 25 post from Reddit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQw-iI-zM3">
+                            <rect key="frame" x="79" y="41" width="217" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="106" id="122-es-mna"/>
+                        <constraint firstItem="jQw-iI-zM3" firstAttribute="centerX" secondItem="xbV-xv-3um" secondAttribute="centerX" id="2AK-Q4-31d"/>
+                        <constraint firstItem="jQw-iI-zM3" firstAttribute="centerY" secondItem="xbV-xv-3um" secondAttribute="centerY" id="4Uh-Bj-RPT"/>
+                        <constraint firstItem="jQw-iI-zM3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xbV-xv-3um" secondAttribute="leading" constant="16" id="aMm-B8-Uub"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jQw-iI-zM3" secondAttribute="trailing" constant="16" id="dT5-tU-XSs"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sZm-kK-2UR" userLabel="Separator">
+                    <rect key="frame" x="0.0" y="106" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="369-mc-dEw"/>
+                    </constraints>
+                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="35" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fm8-ky-QWJ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="107" width="375" height="560"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="yNL-Yy-4iw"/>
@@ -27,13 +53,19 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="fm8-ky-QWJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BHe-3e-Ilw"/>
+                <constraint firstItem="sZm-kK-2UR" firstAttribute="top" secondItem="xbV-xv-3um" secondAttribute="bottom" id="12i-Th-gJd"/>
+                <constraint firstAttribute="trailing" secondItem="sZm-kK-2UR" secondAttribute="trailing" id="4IR-ci-avu"/>
+                <constraint firstItem="xbV-xv-3um" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="I8a-tv-If3"/>
+                <constraint firstAttribute="trailing" secondItem="xbV-xv-3um" secondAttribute="trailing" id="KAW-1Y-PZP"/>
                 <constraint firstAttribute="trailing" secondItem="fm8-ky-QWJ" secondAttribute="trailing" id="Qmi-jP-UzD"/>
                 <constraint firstItem="fm8-ky-QWJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RFI-LH-G9L"/>
+                <constraint firstItem="xbV-xv-3um" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="W9O-JE-ATx"/>
                 <constraint firstAttribute="bottom" secondItem="fm8-ky-QWJ" secondAttribute="bottom" id="gxf-0D-jZI"/>
+                <constraint firstItem="sZm-kK-2UR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pui-9u-j95"/>
+                <constraint firstItem="fm8-ky-QWJ" firstAttribute="top" secondItem="sZm-kK-2UR" secondAttribute="bottom" id="zGd-h4-at6"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="23.5" y="27.5"/>
+            <point key="canvasLocation" x="-87.5" y="28.5"/>
         </view>
     </objects>
 </document>
