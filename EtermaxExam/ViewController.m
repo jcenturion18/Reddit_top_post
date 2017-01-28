@@ -17,6 +17,7 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 
 @property (nonatomic, strong) SimpleRestClient *restClient;
 @property (nonatomic, strong) NSArray *postModelArray;
+@property (nonatomic, strong) NSArray *cellViewArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -26,14 +27,23 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view from its nib.
-	self.tableView.delegate = self;
-	self.tableView.dataSource = self;
+
+	[self setUpTableView];
 
 	self.restClient = [SimpleRestClient new];
 
-	[self registerTableViewCell];
 	[self callInitialRequest];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"must_reload_table_data" object:nil];
+}
+
+- (void)setUpTableView
+{
+	self.tableView.delegate = self;
+	self.tableView.dataSource = self;
+	self.tableView.allowsSelection = NO;
+
+	[self registerTableViewCell];
 }
 
 - (void)callInitialRequest
@@ -41,13 +51,11 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 	__weak ViewController *weakSelf = self;
 
 	[self.restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
-	    // NSLog(responseObject);
-
 	    RedditPostModelHandler *handler = [RedditPostModelHandler new];
 	    weakSelf.postModelArray = [handler createArrayWithDictionary:responseObject];
 	    [weakSelf reloadTableData];
 	} andFailBlock: ^(NSError *error) {
-	    [weakSelf showAlertWithTitle:@"Hubo un error" andMessage:@"Hubo un error al obtener los datos"];
+	    [weakSelf showAlertWithTitle:@"Error" message:@"Hubo un error al obtener los datos" andActionTitle:@"Retry"];
 	}];
 }
 
@@ -59,10 +67,10 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 
 - (void)reloadTableData
 {
-	[self.tableView reloadData];
+	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
-- (void)showAlertWithTitle:(NSString *)title andMessage:(NSString *)message
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message andActionTitle:(NSString *)actionTitle
 {
 	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title
 		                                                           message:message
@@ -70,7 +78,7 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 
 	__weak ViewController *weakSelf = self;
 
-	UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Reintentar" style:UIAlertActionStyleDefault
+	UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault
 		                                                  handler: ^(UIAlertAction *action) {
 		[weakSelf callInitialRequest];
 	}];
