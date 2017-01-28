@@ -12,6 +12,7 @@
 		6D3B0E3F1E3B6B46001AF4D3 /* RedditPostModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E3E1E3B6B46001AF4D3 /* RedditPostModelHandler.m */; };
 		6D3B0E461E3C0799001AF4D3 /* RedditPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */; };
 		6D3B0E471E3C0799001AF4D3 /* RedditPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */; };
+		6D3B0E571E3CF3CD001AF4D3 /* PersistDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E561E3CF3CD001AF4D3 /* PersistDataHandler.m */; };
 		6DE9264F1E3AAFB000E4DF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9264E1E3AAFB000E4DF44 /* main.m */; };
 		6DE926521E3AAFB000E4DF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE926511E3AAFB000E4DF44 /* AppDelegate.m */; };
 		6DE926581E3AAFB100E4DF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE926561E3AAFB100E4DF44 /* Main.storyboard */; };
@@ -32,6 +33,8 @@
 		6D3B0E431E3C0799001AF4D3 /* RedditPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPostTableViewCell.h; sourceTree = "<group>"; };
 		6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPostTableViewCell.m; sourceTree = "<group>"; };
 		6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedditPostTableViewCell.xib; sourceTree = "<group>"; };
+		6D3B0E551E3CF3CD001AF4D3 /* PersistDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersistDataHandler.h; sourceTree = "<group>"; };
+		6D3B0E561E3CF3CD001AF4D3 /* PersistDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersistDataHandler.m; sourceTree = "<group>"; };
 		6DE9264A1E3AAFB000E4DF44 /* EtermaxExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtermaxExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE9264E1E3AAFB000E4DF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DE926501E3AAFB000E4DF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				6D3B0E431E3C0799001AF4D3 /* RedditPostTableViewCell.h */,
 				6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */,
 				6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */,
+				6D3B0E551E3CF3CD001AF4D3 /* PersistDataHandler.h */,
+				6D3B0E561E3CF3CD001AF4D3 /* PersistDataHandler.m */,
 			);
 			path = EtermaxExam;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3B0E571E3CF3CD001AF4D3 /* PersistDataHandler.m in Sources */,
 				6DE926701E3AB3F800E4DF44 /* SimpleRestClient.m in Sources */,
 				6D3B0E461E3C0799001AF4D3 /* RedditPostTableViewCell.m in Sources */,
 				6DE9266B1E3AB14200E4DF44 /* ViewController.m in Sources */,
