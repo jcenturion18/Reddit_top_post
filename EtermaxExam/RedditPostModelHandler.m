@@ -52,6 +52,7 @@
 
 	[self.restClient downloadPictureFromURL:model.thumbnailURL withSuccessBlock: ^(id responseObject) {
 	    weakModel.thumbnail = responseObject;
+	    [[NSNotificationCenter defaultCenter] postNotificationName:@"must_reload_table_data" object:nil];
 	} andFailBlock: ^(NSError *error) {
 	    weakModel.thumbnail = nil;
 	}];
