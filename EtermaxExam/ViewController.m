@@ -54,11 +54,12 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 - (void)callInitialRequest
 {
 	__weak ViewController *weakSelf = self;
-
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 	[self.restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
 	    RedditPostModelHandler *handler = [RedditPostModelHandler new];
 	    weakSelf.postModelArray = [handler createArrayWithDictionary:responseObject];
 	    [weakSelf reloadTableData];
+	    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	} andFailBlock: ^(NSError *error) {
 	    [weakSelf showAlertWithTitle:@"Error" message:@"Hubo un error al obtener los datos" andActionTitle:@"Retry"];
 	}];
@@ -75,6 +76,7 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 	if ([self.refreshControl isRefreshing]) {
 		[self.refreshControl endRefreshing];
 	}
+
 	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
