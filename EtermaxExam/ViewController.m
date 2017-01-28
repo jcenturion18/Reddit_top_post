@@ -10,6 +10,9 @@
 #import "SimpleRestClient.h"
 #import "RedditPostModelHandler.h"
 #import "RedditPostTableViewCell.h"
+#import "PersistDataHandler.h"
+
+#import <UIKit/UIKit.h>
 
 static NSString *const kDequeueReusable = @"redditPostCell";
 
@@ -20,6 +23,7 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 @property (nonatomic, strong) NSArray *cellViewArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) PersistDataHandler *persistDataHandler;
 
 @end
 
@@ -32,10 +36,21 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 	[self setUpTableView];
 
 	self.restClient = [SimpleRestClient new];
+	self.persistDataHandler = [PersistDataHandler new];
+
+	self.postModelArray = [self.persistDataHandler loadRedditPostModelList];
+	[self.tableView reloadData];
 
 	[self callInitialRequest];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableData) name:@"must_reload_table_data" object:nil];
+}
+
+- (void)loadSaveData
+{
+	NSDictionary *saveData = [[NSUserDefaults standardUserDefaults] objectForKey:@"RespondeDictionary"];
+	RedditPostModelHandler *handler = [RedditPostModelHandler new];
+	self.postModelArray = [handler createArrayWithDictionary:saveData];
 }
 
 - (void)setUpTableView
@@ -58,6 +73,9 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 	[self.restClient getDataWithURL:@"https://api.reddit.com/top?limit=25" withSuccessBlock: ^(id responseObject) {
 	    RedditPostModelHandler *handler = [RedditPostModelHandler new];
 	    weakSelf.postModelArray = [handler createArrayWithDictionary:responseObject];
+
+	    [weakSelf.persistDataHandler saveRedditPostModelList:weakSelf.postModelArray];
+
 	    [weakSelf reloadTableData];
 	    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	} andFailBlock: ^(NSError *error) {
