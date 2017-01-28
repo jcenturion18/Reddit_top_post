@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -17,37 +16,38 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v7w-On-2bd">
-                        <rect key="frame" x="16" y="16" width="86" height="86"/>
+                        <rect key="frame" x="8" y="16" width="0.0" height="86"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="v7w-On-2bd" secondAttribute="height" multiplier="1:1" id="1Aj-V5-b0L"/>
+                            <constraint firstAttribute="height" constant="86" id="Hm0-aD-RKm"/>
+                            <constraint firstAttribute="width" id="TDW-kO-nl9"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ON2-Xt-IVY">
-                        <rect key="frame" x="110" y="16" width="38" height="21"/>
+                        <rect key="frame" x="16" y="16" width="38" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRv-1w-AtU">
-                        <rect key="frame" x="110" y="45" width="40" height="17"/>
+                        <rect key="frame" x="16" y="45" width="40" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w0-SB-dPe">
-                        <rect key="frame" x="158" y="45" width="67" height="17"/>
+                        <rect key="frame" x="64" y="45" width="67" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subredit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sr5-p3-CqU" userLabel="Comments Label">
-                        <rect key="frame" x="110" y="70" width="55" height="17"/>
+                        <rect key="frame" x="16" y="70" width="55" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subredit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atz-tg-JDt" userLabel="Subredit Label">
-                        <rect key="frame" x="173" y="70" width="55" height="17"/>
+                        <rect key="frame" x="79" y="70" width="55" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -55,8 +55,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ON2-Xt-IVY" secondAttribute="trailing" constant="8" id="1us-g8-kwh"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="v7w-On-2bd" secondAttribute="bottom" constant="8" id="2nb-fn-YDQ"/>
-                    <constraint firstItem="v7w-On-2bd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="AEx-wE-vG8"/>
+                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="v7w-On-2bd" secondAttribute="bottom" constant="8" id="2nb-fn-YDQ"/>
+                    <constraint firstItem="v7w-On-2bd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="AEx-wE-vG8"/>
                     <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="sr5-p3-CqU" secondAttribute="bottom" constant="8" id="B39-nU-buW"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="atz-tg-JDt" secondAttribute="trailing" constant="8" id="BQn-3W-ZFl"/>
                     <constraint firstItem="ON2-Xt-IVY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Cef-7k-lhg"/>
@@ -77,11 +77,14 @@
                 <outlet property="commentsLabel" destination="sr5-p3-CqU" id="9se-pS-4p3"/>
                 <outlet property="dateLabel" destination="tRv-1w-AtU" id="SHQ-JP-IJE"/>
                 <outlet property="subreditLabel" destination="atz-tg-JDt" id="R1q-tj-B9F"/>
+                <outlet property="thumbnailHeightConstraint" destination="Hm0-aD-RKm" id="bYa-O8-UmR"/>
+                <outlet property="thumbnailLeadingSpace" destination="AEx-wE-vG8" id="HQz-oy-JXv"/>
                 <outlet property="thumbnailView" destination="v7w-On-2bd" id="2an-ha-8iM"/>
+                <outlet property="thumbnailWidthConstraint" destination="TDW-kO-nl9" id="0vx-sA-KJy"/>
                 <outlet property="titleLabel" destination="ON2-Xt-IVY" id="9t1-23-ygp"/>
                 <outlet property="usernameLabel" destination="1w0-SB-dPe" id="d2b-cY-c3y"/>
             </connections>
-            <point key="canvasLocation" x="-203" y="208.5"/>
+            <point key="canvasLocation" x="-357" y="104.5"/>
         </tableViewCell>
     </objects>
 </document>

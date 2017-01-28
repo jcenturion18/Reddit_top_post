@@ -16,6 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *commentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subreditLabel;
 
+#pragma Constraints
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *thumbnailHeightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *thumbnailWidthConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *thumbnailLeadingSpace;
+
 @end
 
 @implementation RedditPostTableViewCell
@@ -27,7 +32,19 @@
 	self.usernameLabel.text = model.author;
 	self.commentsLabel.text = [NSString stringWithFormat:@"Comments: %@", model.comentsQuantity];
 	self.subreditLabel.text = [NSString stringWithFormat:@"/r/%@", model.subreddit];
-	self.thumbnailView.image = model.thumbnail;
+
+	if (model.thumbnail) {
+		self.thumbnailView.image = model.thumbnail;
+
+		self.thumbnailLeadingSpace.constant = 8;
+		self.thumbnailWidthConstraint.constant = 86;
+		self.thumbnailHeightConstraint.constant = 86;
+
+		[UIView animateWithDuration:0.2
+		                 animations: ^{
+		    [self.contentView layoutIfNeeded];              // Called on parent view
+		}];
+	}
 }
 
 @end
