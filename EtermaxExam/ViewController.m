@@ -19,6 +19,7 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 @property (nonatomic, strong) NSArray *postModelArray;
 @property (nonatomic, strong) NSArray *cellViewArray;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -42,6 +43,10 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	self.tableView.allowsSelection = NO;
+
+	self.refreshControl = [[UIRefreshControl alloc]init];
+	[self.tableView addSubview:self.refreshControl];
+	[self.refreshControl addTarget:self action:@selector(callInitialRequest) forControlEvents:UIControlEventValueChanged];
 
 	[self registerTableViewCell];
 }
@@ -67,6 +72,9 @@ static NSString *const kDequeueReusable = @"redditPostCell";
 
 - (void)reloadTableData
 {
+	if ([self.refreshControl isRefreshing]) {
+		[self.refreshControl endRefreshing];
+	}
 	[self.tableView performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
