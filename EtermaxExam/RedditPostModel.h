@@ -11,6 +11,7 @@
 
 @interface RedditPostModel : NSObject
 
+@property (nonatomic, copy) NSString *postId;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *author;
 @property (nonatomic, copy) NSString *date;
@@ -19,4 +20,6 @@
 @property (nonatomic, strong) NSNumber *comentsQuantity;
 @property (nonatomic, strong) UIImage *thumbnail;
 
++ (RedditPostModel *)createModelWithDictionary:(NSDictionary *)dictionary andThumbnail:(UIImage *)thumbnail;
+- (NSDictionary *)dictionaryWithModel;
 @end
