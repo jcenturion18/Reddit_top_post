@@ -43,7 +43,7 @@
 	model.title = [dictionary ns_objectForKey:@"title"];
 	model.author = [dictionary ns_objectForKey:@"author"];
 
-	model.date = [dictionary ns_objectForKey:@"title"];
+	model.date = [self createDateWithTimestamp:[dictionary ns_objectForKey:@"created_utc"]];
 	model.thumbnailURL = [dictionary ns_objectForKey:@"thumbnail"];
 	model.subreddit = [dictionary ns_objectForKey:@"subreddit"];
 	model.comentsQuantity = [dictionary ns_objectForKey:@"num_comments"];
@@ -53,10 +53,21 @@
 	[self.restClient downloadPictureFromURL:model.thumbnailURL withSuccessBlock: ^(id responseObject) {
 	    weakModel.thumbnail = responseObject;
 	} andFailBlock: ^(NSError *error) {
-	    NSLog(@"");
+	    weakModel.thumbnail = nil;
 	}];
 
 	return model;
+}
+
+- (NSString *)createDateWithTimestamp:(NSNumber *)timestamp
+{
+	NSTimeInterval timeInterval = [timestamp doubleValue];
+	NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"dd.MM.yy 'at' HH:mm"];
+
+	return [formatter stringFromDate:date];
 }
 
 @end
