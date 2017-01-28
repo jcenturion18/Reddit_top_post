@@ -10,6 +10,8 @@
 		6D3B0E391E3AC700001AF4D3 /* NSDictionary+Null.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E381E3AC700001AF4D3 /* NSDictionary+Null.m */; };
 		6D3B0E3C1E3AC8A6001AF4D3 /* RedditPostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */; };
 		6D3B0E3F1E3B6B46001AF4D3 /* RedditPostModelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E3E1E3B6B46001AF4D3 /* RedditPostModelHandler.m */; };
+		6D3B0E461E3C0799001AF4D3 /* RedditPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */; };
+		6D3B0E471E3C0799001AF4D3 /* RedditPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */; };
 		6DE9264F1E3AAFB000E4DF44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE9264E1E3AAFB000E4DF44 /* main.m */; };
 		6DE926521E3AAFB000E4DF44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE926511E3AAFB000E4DF44 /* AppDelegate.m */; };
 		6DE926581E3AAFB100E4DF44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE926561E3AAFB100E4DF44 /* Main.storyboard */; };
@@ -27,6 +29,9 @@
 		6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPostModel.m; sourceTree = "<group>"; };
 		6D3B0E3D1E3B6B46001AF4D3 /* RedditPostModelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPostModelHandler.h; sourceTree = "<group>"; };
 		6D3B0E3E1E3B6B46001AF4D3 /* RedditPostModelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPostModelHandler.m; sourceTree = "<group>"; };
+		6D3B0E431E3C0799001AF4D3 /* RedditPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedditPostTableViewCell.h; sourceTree = "<group>"; };
+		6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedditPostTableViewCell.m; sourceTree = "<group>"; };
+		6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RedditPostTableViewCell.xib; sourceTree = "<group>"; };
 		6DE9264A1E3AAFB000E4DF44 /* EtermaxExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EtermaxExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE9264E1E3AAFB000E4DF44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DE926501E3AAFB000E4DF44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +102,9 @@
 				6D3B0E3B1E3AC8A6001AF4D3 /* RedditPostModel.m */,
 				6D3B0E3D1E3B6B46001AF4D3 /* RedditPostModelHandler.h */,
 				6D3B0E3E1E3B6B46001AF4D3 /* RedditPostModelHandler.m */,
+				6D3B0E431E3C0799001AF4D3 /* RedditPostTableViewCell.h */,
+				6D3B0E441E3C0799001AF4D3 /* RedditPostTableViewCell.m */,
+				6D3B0E451E3C0799001AF4D3 /* RedditPostTableViewCell.xib */,
 			);
 			path = EtermaxExam;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE926721E3AB52900E4DF44 /* uncrustify.cfg in Resources */,
+				6D3B0E471E3C0799001AF4D3 /* RedditPostTableViewCell.xib in Resources */,
 				6DE9265A1E3AAFB100E4DF44 /* Assets.xcassets in Resources */,
 				6DE9266C1E3AB14200E4DF44 /* ViewController.xib in Resources */,
 				6DE926581E3AAFB100E4DF44 /* Main.storyboard in Resources */,
@@ -190,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DE926701E3AB3F800E4DF44 /* SimpleRestClient.m in Sources */,
+				6D3B0E461E3C0799001AF4D3 /* RedditPostTableViewCell.m in Sources */,
 				6DE9266B1E3AB14200E4DF44 /* ViewController.m in Sources */,
 				6D3B0E391E3AC700001AF4D3 /* NSDictionary+Null.m in Sources */,
 				6D3B0E3F1E3B6B46001AF4D3 /* RedditPostModelHandler.m in Sources */,
